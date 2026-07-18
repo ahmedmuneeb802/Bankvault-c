@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build BankVault SCD Project",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "src/main.c",
+        "src/account.c",
+        "src/bank_service.c",
+        "src/input_reader.c",
+        "src/console_ui.c",
+        "-Iinclude",
+        "-o",
+        "BankVault.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "detail": "Builds the refactored C Bank Management SCD project."
+    },
+    {
+      "label": "Run BankVault SCD Project",
+      "type": "shell",
+      "command": ".\\BankVault.exe",
+      "dependsOn": "Build BankVault SCD Project",
+      "problemMatcher": [],
+      "detail": "Runs the compiled BankVault SCD project."
+    }
+  ]
+}
